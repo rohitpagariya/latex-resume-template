@@ -1,0 +1,181 @@
+\documentclass[letterpaper,12pt,oneside]{article}
+
+\usepackage{ifthen}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage[left=.75in,right=.75in,top=.55in,bottom=0.55in,nohead,nofoot]{geometry}
+\usepackage{marvosym}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage[bookmarks,
+pdftitle={Resume},
+pdfauthor={Jon Doe},
+pdfsubject={},
+pdfcreator={},
+pdfproducer={},
+pdfkeywords={},
+pdfpagemode={},
+pdfstartview=FitH,
+colorlinks=true,
+linkcolor=black,   %Color for normal internal links.
+anchorcolor=black, %Color for anchor text.
+citecolor=green,   %Color for bibliographical citations in text.
+filecolor=magenta, %Color for URLs which open local files.
+menucolor=red,     %Color for Acrobat menu items.
+urlcolor=black]{hyperref}
+
+% Style settings
+\pagestyle{empty}
+\setlength{\parindent}{0in}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} %change footnote symbols
+
+% Macros
+\newenvironment{myresume}[2]{\pdfbookmark{#1}{#1}{\LARGE{#1} \newline}
+\rule{\textwidth}{0.25mm} {#2} \vspace{-2em} 
+\begin{longtable}{p{0.12\textwidth} p{0.85\textwidth}}}{\end{longtable}}
+
+\renewcommand{\section}[2]{\vspace{-1.5em} \\ \pdfbookmark{#1}{#2}
+{\singlespace\textsc{#1}}&}
+
+\newcommand{\firstentry}[1]{\newline#1}
+\newcommand{\entry}[1]{\vspace{-0.8em}\\~&#1}
+\newcommand{\hide}[1]{}
+
+%%%%%%%%%%%%%%%%
+%% NAME BLOCK %%
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{myresume}{John Doe}{\small
+City, State  \hfill
+\href{mailto:email}{\emph{email}} \hfill
+\htmladdnormallink{\emph{www.yoursite.com}}{www.yoursite.com}
+}
+
+%%%%%%%%%%%%
+%% SKILLS %%
+%%%%%%%%%%%%
+
+\section{Skills}{skills}
+
+\firstentry{
+Fancy new Skills \newline 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% WORK EXPERIENCE %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Work}{work}
+
+\firstentry {
+\textbf{Some job} \hfill From - to \newline
+\small { Description here \newline 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \newline 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+}
+}
+
+\entry{
+\textbf{One more job}, \hfill From - to \newline
+\small { 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \newline 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+}
+}
+
+% Just copy the above entry code to add more jobs
+
+%%%%%%%%%%%%%%%
+%% EDUCATION %%
+%%%%%%%%%%%%%%%
+
+\section{Education}{education}
+
+\firstentry {
+University Name \hfill From - to \newline
+Degree Name 
+%\hfill GPA: x.x
+}
+
+\entry{
+University Name \hfill From - to \newline
+Degree Name 
+%\hfill GPA: x.x
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INTERNSHIPS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Internships}{internships}
+
+\firstentry{
+Add your internship info \newline
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \newline 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+}
+
+%%%%%%%%%%%%%%%%%%
+%% PROJECTS %%
+%%%%%%%%%%%%%%%%%%
+
+% Add any side projects or school projects here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COURSES%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Courses}{courses}
+
+\firstentry{
+\begin{tabular}{lll}
+
+\small A & \small B &  \small C \\
+\small A & \small B &  \small C \\
+\small A & \small B &  \small C \\
+\small A & \small B &  \small C \\
+\end{tabular} \newline
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACADEMIC HONORS & AWARDS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Academic \newline Awards}{honors}
+
+\firstentry{
+Awesome award \hfill  Month, Year \newline
+Descripton
+}
+
+\entry{
+Onre more awesome award \hfill  Month, Year \newline
+Descripton
+}
+
+%%%%%%%%%%%%%%%%
+%% REFERENCES %%
+%%%%%%%%%%%%%%%%
+
+\section{References}{ref}
+
+\firstentry{
+First Reference
+}
+
+\entry{
+Second reference
+}
+
+\entry{
+Third reference
+}
+
+\end{myresume}
+\end{document}
+
